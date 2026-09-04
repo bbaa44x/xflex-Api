@@ -20,7 +20,7 @@ const allowedOrigins = [
 
 
 app.use(cors({
-    origin:["https://wnw0vh57-5173.uks1.devtunnels.ms","http://localhost:5173"],
+    origin:allowedOrigins,
     credentials:true,
     
 }))
