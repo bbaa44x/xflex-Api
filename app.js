@@ -157,7 +157,7 @@ app.post("/signIn",validateMiddleWare,(req,res)=>
         }
     
         const token = generateToken({email});
-        return res.cookie("token",token,{httpOnly:true,secure:false,sameSite:"strict"}).status(201).json({
+        return res.cookie("token",token,{httpOnly:true,secure:true,sameSite:"none"}).status(201).json({
             success:true,
             body:{
                 payload:null,
