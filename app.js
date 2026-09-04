@@ -45,7 +45,7 @@ app.get("/",(req,res)=>
 
 
 app.post("/signUp",validateMiddleWare,checkIfExistsMiddleWare,(req,res)=>
-{   console.log("sign up reached");
+{   
     const {email,password,confirmPassword}=req.body;
     try {
         const read = readFileSync("data/users.json",{encoding:"utf8",flag:"r"});
@@ -93,7 +93,7 @@ app.post("/signUp/:email",(req,res)=>
     }
 
     const token = generateToken({email:`${email}`});
-   return  res.cookie("token",token,{httpOnly:true,secure:false,sameSite:"strict"}).status(202).json({
+   return  res.cookie("token",token,{httpOnly:true,secure:false,sameSite:"none"}).status(202).json({
         success:true,
         body:{
             payload:null,
