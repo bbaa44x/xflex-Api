@@ -93,7 +93,7 @@ app.post("/signUp/:email",(req,res)=>
     }
 
     const token = generateToken({email:`${email}`});
-   return  res.cookie("token",token,{httpOnly:true,secure:false,sameSite:"none"}).status(202).json({
+   return  res.cookie("token",token,{httpOnly:true,secure:true,sameSite:"none"}).status(202).json({
         success:true,
         body:{
             payload:null,
