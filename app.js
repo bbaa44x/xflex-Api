@@ -25,7 +25,7 @@ app.use(cors({
 }))
 app.use(express.json());
 app.use(cookieParser())
-app.listen(process.env.PORT ?? 3000,"localhost",()=>
+app.listen(process.env.PORT ?? 4000,"localhost",()=>
 {
     console.log("server is running on 3000");
 })
